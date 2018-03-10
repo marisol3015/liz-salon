@@ -2,6 +2,7 @@
 
 namespace multiventas\Http\Controllers\Admin;
 
+use multiventas\Models\Marca;
 use Illuminate\Http\Request;
 use multiventas\Http\Controllers\Controller;
 
@@ -35,7 +36,17 @@ class MarcasController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route('marcas.index')->with('success', "The brand <strong>Brand</strong> has successfully been created.");
+
+        
+        $this->validate($request, [
+            'nombre' => 'required|unique:marcas',
+            'descripcion' => 'required',
+        ]);
+        $brand = Marca::create([
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion'),
+        ]);
+        return redirect()->route('marcas.index')->with('success', "La marca <strong>$brand->name</strong> ha sido creada correctamente.");
     }
 
     /**
