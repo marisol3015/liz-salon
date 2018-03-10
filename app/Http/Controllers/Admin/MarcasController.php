@@ -3,7 +3,7 @@
 namespace multiventas\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Larashop\Http\Controllers\Controller;
+use multiventas\Http\Controllers\Controller;
 
 class MarcasController extends Controller
 {

@@ -36,13 +36,13 @@
                                 <li><a><i class="fa fa-edit"></i> Products <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="{{route('marcas.index')}}">Brands list</a></li>
-                                        <li><a href="{{route('product-categories.index')}}">Categories</a></li>
-                                        <li><a href="{{route('products.index')}}">Products list</a></li>
+                                        <li><a href="{{route('producto-categorias.index')}}">Categories</a></li>
+                                        <li><a href="{{route('productos.index')}}">Products list</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{route('customers.index')}}"><i class="fa fa-user"></i> Customers </a></li>
-                                <li><a href="{{route('orders.index')}}"><i class="fa fa-shopping-cart"></i> Orders </a></li>
-                                <li><a href="{{route('users.index')}}"><i class="fa fa-users"></i> Users </a></li>
+                                <li><a href="{{route('clientes.index')}}"><i class="fa fa-user"></i> Customers </a></li>
+                                <li><a href="{{route('ordenes.index')}}"><i class="fa fa-shopping-cart"></i> Orders </a></li>
+                                <li><a href="{{route('usuarios.index')}}"><i class="fa fa-users"></i> Users </a></li>
                             </ul>
                         </div>
                     </div>
