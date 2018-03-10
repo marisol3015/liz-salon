@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::resource('clientes', 'ClientesController');
+    Route::resource('Marcas', 'MarcasController');
+    Route::resource('producto-categorias', 'ProductoCategoriasController');
+    Route::resource('productos', 'ProductosController');
+    Route::resource('usuarios', 'UsuariosController');
+
+    Route::get('ordenes', [
+        'uses' => 'ordenesController@index',
+        'as' => 'orders.index',
+    ]);
+});

@@ -1,6 +1,6 @@
 <?php
 
-namespace multiventas;
+namespace multiventas\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

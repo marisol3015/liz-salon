@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => multiventas\User::class,
+            'model' => multiventas\Models\User::class,
         ],
 
         // 'users' => [
