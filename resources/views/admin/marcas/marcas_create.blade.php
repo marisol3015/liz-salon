@@ -7,7 +7,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Create Brand <a href="{{route('marcas.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Back </a></h2>
+                    <h2>Crear Marca <a href="{{route('marcas.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Regresar </a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -15,7 +15,7 @@
                     <form method="post" action="{{ route('marcas.store') }}" data-parsley-validate class="form-horizontal form-label-left">
 
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Brand <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Marca <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" value="{{ Request::old('nombre') ?: '' }}" id="nombre" name="nombre" class="form-control col-md-7 col-xs-12">
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('descripcion') ? ' has-error' : '' }}">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Description <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion">Descripcion <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" value="{{ Request::old('descripcion') ?: '' }}" id="descripcion" name="descripcion" class="form-control col-md-7 col-xs-12">
@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                 <input type="hidden" name="_token" value="{{ Session::token() }}">
-                                <button type="submit" class="btn btn-success">Create Brand</button>
+                                <button type="submit" class="btn btn-success">Crear Marca</button>
                             </div>
                         </div>
                     </form>

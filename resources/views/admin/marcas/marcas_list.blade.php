@@ -8,58 +8,38 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Brands <a href="{{route('marcas.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Create New </a></h2>
+                    <h2>Marcas <a href="{{route('marcas.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Nuevo </a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Brand</th>
-                                <th>Description</th>
-                                <th>Action</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Brand</th>
-                                <th>Description</th>
-                                <th>Action</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Accion</th>
                             </tr>
                         </tfoot>
                         <tbody>
+                            @if (count($marcas))
+                            @foreach($marcas as $row)
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
+                                <td>{{$row->nombre}}</td>
+                                <td>{{$row->descripcion}}</td>
                                 <td>
-                                    <a href="{{ route('marcas.edit', ['id' => 1]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('marcas.show', ['id' => 1]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
+                                    <a href="{{ route('marcas.edit', ['id' => $row->id]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
+                                    <a href="{{ route('marcas.show', ['id' => $row->id]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>
-                                    <a href="{{ route('marcas.edit', ['id' => 1]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('marcas.destroy', ['id' => 1]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ashton Cox</td>
-                                <td>Junior Technical Author</td>
-                                <td>
-                                    <a href="{{ route('marcas.edit', ['id' => 1]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('marcas.destroy', ['id' => 1]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Cedric Kelly</td>
-                                <td>Senior Javascript Developer</td>
-                                <td>
-                                    <a href="{{ route('marcas.edit', ['id' => 1]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('marcas.destroy', ['id' => 1]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
-                                </td>
-                            </tr>
+                            @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

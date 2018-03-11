@@ -27,7 +27,7 @@ class Marca extends Model
     ];
 
     /**
-     * Get the products for the brand.
+     * obtener los productos de la marca.
      */
     public function products()
     {

@@ -15,21 +15,29 @@ class MarcasController extends Controller
      */
     public function index()
     {
-        return view('admin.marcas.marcas_list');
+        $marcas = Marca::all();
+        $params = [
+            'title' => 'Lista Marcas',
+            'marcas' => $marcas,
+        ];
+        return view('admin.marcas.marcas_list')->with($params);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * muestra el formualrio donde se creara el nuevo recurso.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('admin.marcas.marcas_create');
+        $params = [
+            'title' => 'Crear Marca',
+        ];
+        return view('admin.marcas.marcas_create')->with($params);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * almacena un nuevo recurso en la bd.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -38,41 +46,71 @@ class MarcasController extends Controller
     {
 
         
-        $this->validate($request, [
+        $this->validate($request, [  //es el nombre que viene desde la vista
             'nombre' => 'required|unique:marcas',
             'descripcion' => 'required',
         ]);
-        $brand = Marca::create([
+        $marca = Marca::create([    //llama al metodo create del modelo                     
             'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
         ]);
-        return redirect()->route('marcas.index')->with('success', "La marca <strong>$brand->name</strong> ha sido creada correctamente.");
+        return redirect()->route('marcas.index')->with('success', "La marca <strong>$marca->name</strong> ha sido creada correctamente.");
     }
 
     /**
-     * Display the specified resource.
+     * muestra el recurso especifico para eliminar.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return view('admin.marcas.marcas_delete');
+        try{
+            $marca = Brand::findOrFail($id);
+            $params = [
+                'title' => 'Borrar Marcas',
+                'brand' => $marca,
+            ];
+            return view('admin.marcas.marcas_delete')->with($params);
+        }
+        catch (ModelNotFoundException $ex) 
+        {
+            if ($ex instanceof ModelNotFoundException)
+            {
+                return response()->view('errors.'.'404');
+            }
+        }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     *muestro el formulario desde donde se va a editar.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view('admin.marcas.marcas_edit');
+        try
+        {
+            $marca = Marca::findOrFail($id);
+            $params = [
+                'title' => 'Editar Marca',
+                'marca' => $marca,
+            ];
+            return view('admin.marcas.marcas_edit')->with($params);
+        }
+        catch (ModelNotFoundException $ex) 
+        {
+            if ($ex instanceof ModelNotFoundException)
+            {
+                return response()->view('errors.'.'404');
+            }
+        }
+    
     }
 
     /**
-     * Update the specified resource in storage.
+     * almacena las actualizaciones en la bd.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -80,17 +118,48 @@ class MarcasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return redirect()->route('marcas.index')->with('success', "The brand <strong>Brand</strong> has successfully been updated.");
+        try
+        {
+            $this->validate($request, [
+                'nombre' => 'required|unique:marcas,nombre,'.$id,
+                'descripcion' => 'required',
+            ]);
+            $marca = Marca::findOrFail($id);
+            $marca->nombre = $request->input('nombre');
+            $marca->descripcion = $request->input('descripcion');
+            $marca->save();
+            return redirect()->route('marcas.index')->with('success', "The Marca <strong>$marca->nombre</strong> ha sido actualizada.");
+        }
+        catch (ModelNotFoundException $ex) 
+        {
+            if ($ex instanceof ModelNotFoundException)
+            {
+                return response()->view('errors.'.'404');
+            }
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
+     * permite eliminar un registro de la bd.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        return redirect()->route('marcas.index')->with('success', "The brand <strong>Brand</strong> has successfully been archived.");
+        try
+        {
+            $marca = Marca::findOrFail($id);
+            $marca->delete();
+            return redirect()->route('marcas.index')->with('success', "The brand <strong>Brand</strong> has successfully been archived.");
+        }
+        catch (ModelNotFoundException $ex) 
+        {
+            if ($ex instanceof ModelNotFoundException)
+            {
+                return response()->view('errors.'.'404');
+            }
+        }
     }
+    
 }
