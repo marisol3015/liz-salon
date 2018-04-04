@@ -5,20 +5,37 @@ namespace multiventas\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Clientes extends Model
+class Cliente extends Model
 {
     use SoftDeletes;
+    
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+    protected $primaryKey = 'documento';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'nombres',
-        'apellidos',
-        'email',
-        'direccion_postal',
-        'direccion',
+        'documento',
+         'nombre',
+        'apellido',
+        'direccion'.
+        'telefono',
+       'email',
     ];
+
+    /**
+     * obtener los productos de los clientes.
+     */
+    public function products()
+    {
+        return $this->hasMany('multiventas\Models\Producto','cliente_documento','documento');
+    }
 }

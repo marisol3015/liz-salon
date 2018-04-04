@@ -5,7 +5,7 @@ namespace multiventas\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Marca extends Model
+class Empleado extends Model
 {
     use SoftDeletes;
 
@@ -15,15 +15,22 @@ class Marca extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
-
+    protected $primaryKey = 'documento';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
+       'documento',
         'nombre',
-        'descripcion',
+        'apellido',
+        'direccion',
+        'telefono',
+        'email',
+        'usuario',
+        'contrasena',
+       
     ];
 
     /**
@@ -31,6 +38,6 @@ class Marca extends Model
      */
     public function products()
     {
-        return $this->hasMany('multiventas\Models\Producto','marca_id','id');
+        return $this->hasMany('multiventas\Models\Producto','empleado_documento','documento');
     }
 }
