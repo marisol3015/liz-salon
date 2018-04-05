@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Confirmar borrado del registro <a href="{{route('empleados.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Regresar </a></h2>
+                    <h2>Confirmar borrado del registro <a href="{{route('empleados')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Regresar </a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
