@@ -48,7 +48,7 @@
             <h3 class="text-center"><strong><kbd>Facturar</kbd></strong></h3><br>
             <img src="admin/images/Caja.jpg" class="img-circle person" alt="Caja"  >
           </div>
-        
+          <div class="col-sm-4">
               <h3 class="text-center"><strong><kbd>Contabilidad</kbd></strong></h3><br>
               <img src="admin/images/Contabilidad.jpg" class="img-circle person" alt="Contabilidad"  >
             </div>         

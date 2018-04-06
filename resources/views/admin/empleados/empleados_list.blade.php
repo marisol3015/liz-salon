@@ -8,22 +8,23 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Empleados <a href="{{route('empleados.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Nuevo </a></h2>
+                    <h2><kbd>Lista de empleados <a href="{{route('empleados.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Crear nuevo empleado </a></kbd></h2>
                     <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
+                <div class="x_content text-center" >
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Documento</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>Email</th>                                
-                                <th>Usuario</th>
-                                <th>Contraseña</th>
-                                <th>Accion</th>
+                                <th><kbd>Documento</kbd></th>
+                                <th><kbd>Nombre</kbd></th>
+                                <th><kbd>Apellido</kbd></th>
+                                <th><kbd>Direccion</kbd></th>
+                                <th><kbd>Telefono</kbd></th>
+                                <th><kbd>Email</kbd></th>                                
+                                <th><kbd>Usuario</kbd></th>
+                                <th><kbd>Contraseña</kbd></th>
+                                <th><kbd>Acción</kbd></th>
+                            
                             </tr>
                         </thead>
                            <tbody>
@@ -39,9 +40,9 @@
                                 <td>{{$row->usuario}}</td>
                                 <td>{{$row->contrasena}}</td>
                                 <td>
-                                    <a href="{{ route('empleados.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('empleados.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
-                                </td>
+                                    <a href="{{ route('empleados.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>
+                                   <a href="{{ route('empleados.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-chevron-left"></i> Eliminar </a></i> </a>
+                                            </td
                             </tr>
                             @endforeach
                             @endif

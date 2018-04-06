@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>Inicio</title>
+        <title>Liz salón</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,12 +30,13 @@
         </style>
       </head>
  
-      <body>
+      <body style="background-image: url('/admin/images/fondo.jpg')" >
+           
 
             <div class="container text-center"  >   
                     <br />
         <!-- page content -->
-       
+       @include('templates.admin.partials.alerts')
         @yield('content')
     </div>
     <!-- /page content -->
