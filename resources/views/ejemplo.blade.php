@@ -41,20 +41,28 @@
                         </a>
           </div>
           <div class="col-sm-4">
+                <a href="/admin/clientes">
             <h3 class="text-center"><strong><kbd>Clientes</kbd></strong></h3><br>
             <img src="admin/images/Cliente.jpg" class="img-circle person" alt="Cliente">
-          </div>
+        </a>  
+        </div>
+          
           <div class="col-sm-4">
+              
             <h3 class="text-center"><strong><kbd>Facturar</kbd></strong></h3><br>
             <img src="admin/images/Caja.jpg" class="img-circle person" alt="Caja"  >
-          </div>
+        </a>
+        </div>
+          
           <div class="col-sm-4">
               <h3 class="text-center"><strong><kbd>Contabilidad</kbd></strong></h3><br>
               <img src="admin/images/Contabilidad.jpg" class="img-circle person" alt="Contabilidad"  >
             </div>         
         <div class="col-sm-4">
+              <a href="/admin/opciones">
             <h3 class="text-center"><strong><kbd>Agenda</kbd></strong></h3><br>
             <img src="admin/images/Agenda.jpg" class="img-circle person" alt="Agenda"  >
+        </a>
           </div>        
           <div class="col-sm-4"  style="float:right">
             <h3 class="text-center"><strong><kbd>Catalogo</kbd></strong></h3><br>

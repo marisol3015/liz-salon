@@ -1,11 +1,9 @@
 <?php
 
-namespace Larashop\Models;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class DetalleOrden extends Model
+class Cita extends Model
 {
     use SoftDeletes;
 
@@ -15,10 +13,8 @@ class DetalleOrden extends Model
      * @var array
      */
     protected $fillable = [
-        'orden_id',
-        'producto_id',
-        'cantidad',
-        'precio',
-        'sub_total',
-    ];
+        'titulo',
+        'fecha_inicio',
+        'fecha_final',
+         ];
 }
