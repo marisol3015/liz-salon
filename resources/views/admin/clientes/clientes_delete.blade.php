@@ -20,7 +20,7 @@
                         <input name="_method" type="hidden" value="DELETE">
                         <button type="submit" class="btn btn-danger">Si quiero eliminar al cliente </button>
                     </form>
-                    <a href="{{route('empleados.index')}}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Regresar </a>
+                    <a href="{{route('empleados.index')}}" class="btn btn-info btn"><i class="fa fa-chevron-left"></i> Regresar </a>
                 </div>
             </div>
         </div>

@@ -8,20 +8,20 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Empleados <a href="{{route('clientes.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Nuevo </a></h2>
+                    <h2><kbd>Lista de clientes <a href="{{route('clientes.create')}}" class="btn btn-primary btn"><i class="fa fa-plus"></i> Nuevo </a><a href="{{route('clientes.index')}}" class="btn btn-info btn"><i class="fa fa-chevron-left"></i> Regresar </kbd></a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Documento</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>Email</th>                                
-                                <th>Accion</th>
+                                <th><kbd>Documento</kbd></kbd></th>
+                                <th><kbd>Nombre</kbd></th>
+                                <th><kbd>Apellido</kbd></th>
+                                <th><kbd>Direccion</kbd></th>
+                                <th><kbd>Telefono</kbd></th>
+                                <th><kbd>Email</kbd></th>                                
+                                <th><kbd>Accion</kbd></th>
                             </tr>
                         </thead>
                            <tbody>
@@ -35,9 +35,9 @@
                                 <td>{{$row->telefono}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>
-                                    <a href="{{ route('clientes.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil" title="Edit"></i> </a>
-                                    <a href="{{ route('clientes.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o" title="Delete"></i> </a>
-                                </td>
+                                        <a href="{{ route('clientes.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>
+                                        <a href="{{ route('clientes.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-chevron-left"></i> Eliminar </a></i> </a>
+                                    </td
                             </tr>
                             @endforeach
                             @endif

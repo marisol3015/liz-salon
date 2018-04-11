@@ -8,7 +8,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2><kbd>Lista de empleados <a href="{{route('empleados.create')}}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Crear nuevo empleado </a></kbd></h2>
+                    <h2><kbd>Lista de empleados<a href="{{route('empleados.create')}}" class="btn btn-primary btn"><i class="fa fa-plus"></i>Nuevo </a><a href="{{route('clientes.index')}}" class="btn btn-info btn"><i class="fa fa-chevron-left"></i> Regresar </kbd></a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content text-center" >
@@ -40,9 +40,9 @@
                                 <td>{{$row->usuario}}</td>
                                 <td>{{$row->contrasena}}</td>
                                 <td>
-                                    <a href="{{ route('empleados.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>
+                                   <a href="{{ route('empleados.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>
                                    <a href="{{ route('empleados.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-chevron-left"></i> Eliminar </a></i> </a>
-                                            </td
+                               </td
                             </tr>
                             @endforeach
                             @endif

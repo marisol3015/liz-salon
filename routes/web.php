@@ -25,8 +25,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('events', 'EventController@index');
     Route::get('opciones', function () {
         return view('admin.Agenda.agendar');
-    });
 
+
+    });
+    
+      
     Route::get('ordenes', [
         'uses' => 'ordenesController@index',
         'as' => 'ordenes.index',
