@@ -26,12 +26,69 @@
         .person:hover {
             border-color: #F48888;
         }
+    
+    .navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;/*seleccion del menu mas*/
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
 
+
+
+
+}
+
+/* adiciona color a los nombres */
+.navbar li a, .navbar .navbar-brand { 
+    color: #e0e0e0 !important;
+}
+
+/*sombreado al pasar el mouse por un nombre */
+.navbar-nav li a:hover {
+    color: #8bc34a !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+}
         </style>
       </head>
  
       <body style="background-image: url('/admin/images/fondo.jpg')" >
-           
+        <nav class="navbar navbar-default navbar-fixed-top " >
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="admin/imagen/favicon.png">Liz salon</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#myPage">Inicio</a></li>
+                  <li><a href="#band">Empleados</a></li>
+                  <li><a href="#tour">Clientes</a></li>
+                  <li><a href="#contact">Citas</a></li>
+                  <li><a href="#tour">Facturación</a></li>
+                  <li><a href="#contact">Informes</a></li>
+                  <li><a href="#contact"></a></li>
+              </div>
+            </div>
+          </nav>      
+          
 
             <div class="container text-center"  >   
                     <br />
