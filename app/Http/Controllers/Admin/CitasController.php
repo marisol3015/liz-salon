@@ -45,7 +45,7 @@ class CitasController extends Controller
     {
         
         $this->validate($request, [  //es el nombre que viene desde la vista
-            'titulo' => 'required',
+            'titulo' => 'required|alpha',
             'fecha_inicio' => 'required',
             'fecha_final' => 'required',
              ]);

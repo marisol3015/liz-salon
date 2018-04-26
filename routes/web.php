@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('ejemplo');
+    return view('auth/login');
 });
-
+Route::group(['middleware' => 'auth'], function() {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('clientes', 'ClientesController');
     Route::resource('empleados', 'EmpleadosController');
@@ -25,13 +25,33 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('events', 'EventController@index');
     Route::get('opciones', function () {
         return view('admin.Agenda.agendar');
-
+      
 
     });
+});
+    /*Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
+        Route::resource('login', 'LoginController');
+              
     
-      
-    Route::get('ordenes', [
-        'uses' => 'ordenesController@index',
-        'as' => 'ordenes.index',
-    ]);
+        });*/
+        
+   
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'auth', 'namespace' => 'auth'], function () {
+Route::get('password/reset','forgotpasswordcontroller@showLinkRequestForm')->name('password.reset');
+Route::post('password/email','forgotpasswordcontroller@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}','forgotpasswordcontroller@showResetForm')->name('password.reset.token');
+Route::post('password/reset','resetpasswordcontroller@reset');
 });

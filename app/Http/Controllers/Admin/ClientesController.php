@@ -47,12 +47,12 @@ class ClientesController extends Controller
 
       
       $this->validate($request, [  //es el nombre que viene desde la vista
-          'documento'=> 'required|unique:clientes',
-          'nombre' => 'required',
-          'apellido' => 'required',
+          'documento'=> 'required|unique:clientes|numeric',
+          'nombre' => 'required|alpha',
+          'apellido' => 'required|alpha',
           'direccion' => 'required',
-          'telefono' => 'required',
-          'email' => 'required',
+          'telefono' => 'required|numeric',
+          'email' => 'required|email',
           
       ]);
       $cliente = Cliente::create([    //llama al metodo create del modelo                     
@@ -132,12 +132,12 @@ class ClientesController extends Controller
       try
       {
           $this->validate($request, [
-              'documento'=> 'required',
-              'nombre' => 'required',
-              'apellido' => 'required',
+              'documento'=> 'required|unique:clientes|numeric',
+              'nombre' => 'required|alpha',
+              'apellido' => 'required|alpha',
               'direccion' => 'required',
-              'telefono' => 'required',
-              'email' => 'required',
+              'telefono' => 'required|numeric',
+              'email' => 'required|email',
               
             
           ]);

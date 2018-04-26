@@ -78,13 +78,33 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#myPage">Inicio</a></li>
-                  <li><a href="#band">Empleados</a></li>
-                  <li><a href="#tour">Clientes</a></li>
-                  <li><a href="#contact">Citas</a></li>
-                  <li><a href="#tour">Facturación</a></li>
-                  <li><a href="#contact">Informes</a></li>
-                  <li><a href="#contact"></a></li>
+                  <li><a href="/home">Inicio</a></li>
+                  <li><a href="/admin/empleados">Empleados</a></li>
+                  <li><a href="/admin/clientes">Clientes</a></li>
+                  <li><a href="/admin/opciones">Citas</a></li>
+                  <li><a href="/admin/facturacion">Facturación</a></li>
+                  <li><a href="/admin/informes">Informes</a></li>
+                  @guest
+                  <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    @else
+                  <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                          {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
+                      </div>
+                  </li>
+              @endguest             
               </div>
             </div>
           </nav>      

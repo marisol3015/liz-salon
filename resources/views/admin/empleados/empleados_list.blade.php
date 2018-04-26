@@ -8,22 +8,21 @@
         <div class="col-md-12 col-sm-12 col-xs-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2><kbd>Lista de empleados <a href="{{route('empleados.create')}}" class="btn btn-primary btn"><i class="fa fa-plus"></i>Nuevo </a><a href="{{route('clientes.index')}}" class="btn btn-info btn"><i class="fa fa-chevron-left"></i> Regresar </kbd></a></h2>
+                    <h2><font color="white">Lista de empleados <a href="{{route('empleados.create')}}" class="btn btn-primary btn"><i class="fa fa-plus"></i>Nuevo </a></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content text-center " >
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th><kbd>Documento</kbd></th>
-                                <th><kbd>Nombre</kbd></th>
-                                <th><kbd>Apellido</kbd></th>
-                                <th><kbd>Direccion</kbd></th>
-                                <th><kbd>Telefono</kbd></th>
-                                <th><kbd>Email</kbd></th>                                
-                                <th><kbd>Usuario</kbd></th>
-                                <th><kbd>Contraseña</kbd></th>
-                                <th><kbd>Acción</kbd></th>
+                                <th>Documento</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Email</th>                                
+                                <th>Contraseña</th>
+                                <th>Acción</th>
                             
                             </tr>
                         </thead>
@@ -37,7 +36,6 @@
                                 <td>{{$row->direccion}}</td>
                                 <td>{{$row->telefono}}</td>
                                 <td>{{$row->email}}</td>
-                                <td>{{$row->usuario}}</td>
                                 <td>{{$row->contrasena}}</td>
                                 <td>
                                    <a href="{{ route('empleados.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>

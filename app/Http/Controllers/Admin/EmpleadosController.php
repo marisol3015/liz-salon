@@ -3,6 +3,7 @@
 namespace multiventas\Http\Controllers\Admin;
 
 use multiventas\Models\Empleado;
+use multiventas\Models\user;
 use Illuminate\Http\Request;
 use multiventas\Http\Controllers\Controller;
 
@@ -47,13 +48,12 @@ class EmpleadosController extends Controller
 
         
         $this->validate($request, [  //es el nombre que viene desde la vista
-            'documento'=> 'required|unique:empleados',
-            'nombre' => 'required',
-            'apellido' => 'required',
+            'documento'=> 'required|unique:empleados|numeric',
+            'nombre' => 'required|alpha',
+            'apellido' => 'required|alpha',
             'direccion' => 'required',
-            'telefono' => 'required',
-            'email' => 'required',
-            'usuario' => 'required',
+            'telefono' => 'required|numeric',
+            'email' => 'required|email',
             'contrasena' => 'required',
         ]);
         $empleado = empleado::create([    //llama al metodo create del modelo                     
@@ -63,8 +63,12 @@ class EmpleadosController extends Controller
             'direccion' => $request->input('direccion'),
             'telefono' => $request->input('telefono'),
             'email' => $request->input('email'),
-            'usuario' => $request->input('usuario'),
             'contrasena' => $request->input('contrasena'),
+        ]);
+        $usuario = user::create([
+                'name' =>  $request->input(trim('nombre')),
+                'email' =>  $request->input(trim('email')),
+                'password' => bcrypt( $request->input('contrasena')),
         ]);
         return redirect()->route('empleados.index')->with('success', "El empleado <strong>$empleado->nombre</strong> ha sido creada correctamente.");
     }
@@ -134,13 +138,12 @@ class EmpleadosController extends Controller
         try
         {
             $this->validate($request, [
-                'documento'=> 'required',
-                'nombre' => 'required',
-                'apellido' => 'required',
+                'documento'=> 'required|numeric',
+                'nombre' => 'required|alpha',
+                'apellido' => 'required|alpha',
                 'direccion' => 'required',
-                'telefono' => 'required',
-                'email' => 'required',
-                'usuario' => 'required',
+                'telefono' => 'required|numeric',
+                'email' => 'required|email',
                 'contrasena' => 'required',
               
             ]);
@@ -154,6 +157,7 @@ class EmpleadosController extends Controller
             $empleado->usuario = $request->input('usuario');
             $empleado->contrasena = $request->input('contrasena');
             $empleado->save();
+        
             return redirect()->route('empleados.index')->with('success', "El empleado <strong>$empleado->nombre</strong> ha sido actualizada.");
         }
         catch (ModelNotFoundException $ex) 
