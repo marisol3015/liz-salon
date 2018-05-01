@@ -16,9 +16,7 @@ class Cita extends Model
         'titulo',
         'fecha_inicio',
         'fecha_final',
-        'title',
-        'start_date',
-        'end_date',
+        
 
          ];
 }

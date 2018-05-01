@@ -31,6 +31,6 @@ class EventController extends Controller
             }
         }
         $calendar = Calendar::addEvents($events);
-   return view('admin.Calendario.fullcalender', compact('calendar'));
+   return view('admin.calendario.fullcalender', compact('calendar'));
     }
 }
