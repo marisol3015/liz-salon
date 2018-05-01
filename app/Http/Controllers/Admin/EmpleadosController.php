@@ -148,7 +148,6 @@ class EmpleadosController extends Controller
               
             ]);
             $empleado = Empleado::findOrFail($documento);
-            $empleado->documento = $request->input('documento');
             $empleado->nombre = $request->input('nombre');
             $empleado->apellido = $request->input('apellido');
             $empleado->direccion = $request->input('direccion');

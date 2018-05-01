@@ -28,7 +28,7 @@
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" value="{{$cliente->nombre}}" id="nombre" name="nombre" class="form-control col-md-7 col-xs-12">
+                                <input type="text" value="{{$cliente->nombre}}" id="nombre" name="nombre" class="form-control col-md-7 col-xs-12" >
                                 @if ($errors->has('nombre'))
                                 <span class="help-block">{{ $errors->first('nombre') }}</span>
                                 @endif

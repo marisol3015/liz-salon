@@ -142,7 +142,6 @@ class ClientesController extends Controller
             
           ]);
           $cliente = Cliente::findOrFail($documento);
-          $cliente->documento = $request->input('documento');
           $cliente->nombre = $request->input('nombre');
           $cliente->apellido = $request->input('apellido');
           $cliente->direccion = $request->input('direccion');
