@@ -25,12 +25,12 @@ class Cliente extends Model
     protected $fillable = [
         'documento',
          'nombre',
-        'apellido',
-        'direccion'.
-        'telefono',
-       'email',
-    ];
-
+         'apellido',
+         'direccion',
+         'telefono',
+         'email',
+               
+     ];
     /**
      * obtener los productos de los clientes.
      */
