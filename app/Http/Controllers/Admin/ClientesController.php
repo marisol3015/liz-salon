@@ -2,7 +2,7 @@
 
 namespace multiventas\Http\Controllers\Admin;
 
-use multiventas\Models\cliente;
+use multiventas\Models\Cliente;
 use Illuminate\Http\Request;
 use multiventas\Http\Controllers\Controller;
 
