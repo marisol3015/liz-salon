@@ -52,7 +52,7 @@
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" value="{{ Request::old('direccion') ?: '' }}" id="direccion" name="direccion" class="form-control col-md-7 col-xs-12">
-                                @if ($errors->has('apellido'))
+                                @if ($errors->has('direccion'))
                                 <span class="help-block">{{ $errors->first('direccion') }}</span>
                                 @endif
                             </div>
