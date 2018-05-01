@@ -149,7 +149,7 @@ class ClientesController extends Controller
           $cliente->telefono = $request->input('telefono');
           $cliente->email = $request->input('email');
           $cliente->save();
-          return redirect()->route('empleados.index')->with('success', "El cliente <strong>$$cliente->nombre</strong> ha sido actualizada.");
+          return redirect()->route('clientes.index')->with('success', "El cliente <strong>$$cliente->nombre</strong> ha sido actualizada.");
       }
       catch (ModelNotFoundException $ex) 
       {
@@ -172,7 +172,7 @@ class ClientesController extends Controller
       {
         $cliente = cliente::findOrFail($documento);
         $cliente->delete();
-          return redirect()->route('$cliente.index')->with('success', "El empleado <strong>$$cliente->nombre</strong> ha sido eliminado.");
+          return redirect()->route('$cliente.index')->with('success', "El cliente <strong>$$cliente->nombre</strong> ha sido eliminado.");
       }
       catch (ModelNotFoundException $ex) 
       {
