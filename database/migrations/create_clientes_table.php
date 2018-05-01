@@ -13,11 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->DataTime('star_data');
-            $table->int('end_date');
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->id('documento')->unique();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('direccion');
+            $table->int('telefono');
+            $table->string('email');
             $table->timestamps();
         });
     }
