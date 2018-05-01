@@ -154,7 +154,6 @@ class EmpleadosController extends Controller
             $empleado->direccion = $request->input('direccion');
             $empleado->telefono = $request->input('telefono');
             $empleado->email = $request->input('email');
-            $empleado->usuario = $request->input('usuario');
             $empleado->contrasena = $request->input('contrasena');
             $empleado->save();
         

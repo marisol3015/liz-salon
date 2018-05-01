@@ -12,17 +12,17 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form method="post" action="{{ route('clientes.update', ['documento' => $cliente->documento]) }}" data-parsley-validate class="form-horizontal form-label-left">
+                 
+                                </div>   <form method="post" action="{{ route('clientes.update', ['documento' => $cliente->documento]) }}" data-parsley-validate class="form-horizontal form-label-left">
                             <div class="form-group{{ $errors->has('documento') ? ' has-error' : '' }}">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="documento">Documento <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" value="{{$cliente->documento}}" id="documento" name="documento" class="form-control col-md-7 col-xs-12">
+                                        <input type="text" value="{{$cliente->documento}}" id="documento" name="documento" class="form-control col-md-7 col-xs-12" readonly="readonly">
                                         @if ($errors->has('documento'))
                                         <span class="help-block">{{ $errors->first('documento') }}</span>
                                         @endif
                                     </div>
-                                </div>
         
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre <span class="required">*</span>
