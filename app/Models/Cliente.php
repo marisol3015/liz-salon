@@ -15,7 +15,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $dates = ['deleted_at'];
+    
     protected $primaryKey = 'documento';
     /**
      * The attributes that are mass assignable.

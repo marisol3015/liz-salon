@@ -13,8 +13,8 @@ class Cita extends Model
      * @var array
      */
     protected $fillable = [
-        'titulo',
-        'fecha_inicio',
-        'fecha_final',
+        'title',
+        'start_date',
+        'end_date',
          ];
 }

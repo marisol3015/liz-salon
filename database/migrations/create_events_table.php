@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->DataTime('star_data');
+            $table->DataTime('start_data');
             $table->int('end_date');
             $table->timestamps();
         });
