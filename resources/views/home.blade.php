@@ -1,6 +1,5 @@
 <html lang="en">
     <head>
-
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -12,7 +11,7 @@
                         @csrf
                     </form>
                 </div>
-        <title>Inicio</title>
+        <title>Categorias</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,23 +32,48 @@
             margin-bottom: 10%;
             width: 60%;
             height: 30%;
-           
-          
+                    
         }
         .person:hover {
             border-color: #F48888;
         }
+        .navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;/*seleccion del menu mas*/
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* adiciona color a los nombres */
+.navbar li a, .navbar .navbar-brand { 
+    color: #e0e0e0 !important;
+}
+
+/*sombreado al pasar el mouse por un nombre */
+.navbar-nav li a:hover {
+    color: #8bc34a !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
 
         </style>
       </head>
  
-      <body style="background-image: url('/admin/images/fondo.jpg')">
-      
-                
-            
+      <body style="background-image: url('/admin/images/fondo.jpg')">                            
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                                     <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
+                                     <a class="navbar-brand" href="{{ url('/home') }}">
+                            {{ config('app.name', 'Liz Salón') }}
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -89,8 +113,7 @@
                         </div>
                     </div>
                 </nav>
-                <div class="container text-center"   >
-
+              <div class="container text-center"   >
                  <div class="col-sm-4" >
                         <a href="/admin/empleados">
             <h3 class="text-center"><strong><kbd>Empleados</kbd></strong></h3><br>
@@ -122,7 +145,7 @@
         </a>
           </div>        
           <div class="col-sm-4"  style="float:right">
-            <h3 class="text-center"><strong><kbd>Catalogo</kbd></strong></h3><br>
+            <h3 class="text-center"><strong><kbd>Servicios</kbd></strong></h3><br>
             <img src="admin/images/Catalogo.jpg" class="img-circle person" alt="Catalogo"  >
           </div>   
       </div>

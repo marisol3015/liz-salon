@@ -22,9 +22,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('productos', 'ProductosController');
     Route::resource('usuarios', 'UsuariosController');
     Route::resource('CrearCita', 'CitasController');
-    Route::get('events', 'EventController@index');
+    Route::get('events', 'EventsController@index');
     Route::get('opciones', function () {
-        return view('admin.Agenda.agendar');
+        return view('admin.Agenda.agendar');     
+
+    });
+    Route::get('Servicios', function () {
+        return view('admin.servicios.servicios');
       
 
     });

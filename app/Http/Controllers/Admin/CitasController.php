@@ -1,10 +1,9 @@
 <?php
 
 namespace multiventas\Http\Controllers\Admin;
-use multiventas\Models\Cita;
+use multiventas\Models\Event;
 use Illuminate\Http\Request;
 use multiventas\Http\Controllers\Controller;
-
 class CitasController extends Controller
 {
     /**
@@ -29,10 +28,11 @@ class CitasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $params = [
-            'title' => 'Crear Citas',
-        ];
+    
+        {
+            $params = [
+                'title' => 'Crear Citas',
+            ];
         return view('admin.Agenda.agenda_create')->with($params);
     }
    /**
@@ -45,18 +45,17 @@ class CitasController extends Controller
     {
         
         $this->validate($request, [  //es el nombre que viene desde la vista
-            'titulo' => 'required|alpha',
-            'fecha_inicio' => 'required',
-            'fecha_final' => 'required',
+            'title' => 'required|alpha',
+            'start_date' => 'required',
+            'end_date' => 'required',
              ]);
-        $event = event::create([    //llama al metodo create del modelo                     
-            'titulo' => $request->input('titulo'),
-            'fecha_inicio' => $request->input('fecha_inicio'),
-            'fecha_final' => $request->input('fecha_final'),
+        $event = Event::create([    //llama al metodo create del modelo                     
+            'title' => $request->input('title'),
+            'start_date' => $request->input('start_date'),
+            'end_date' => $request->input('end_date'),
            
         ]);
-        return redirect()->route('/admin/Crearcita')->with('success', "La cita se ha creado con éxito.");
-    }
+        return redirect()->route('empleados.index')->with('success');    }
 
     /**
      * Display the specified resource.

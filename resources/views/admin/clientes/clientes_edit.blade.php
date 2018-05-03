@@ -11,8 +11,7 @@
                    <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <br />
-                 
+                              <br />                 
                                 </div>   <form method="post" action="{{ route('clientes.update', ['documento' => $cliente->documento]) }}" data-parsley-validate class="form-horizontal form-label-left">
                             <div class="form-group{{ $errors->has('documento') ? ' has-error' : '' }}">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="documento">Documento <span class="required">*</span>

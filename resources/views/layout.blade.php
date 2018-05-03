@@ -34,10 +34,6 @@
     font-size: 11px !important;
     letter-spacing: 4px;
     opacity:0.9;
-
-
-
-
 }
 
 /* adiciona color a los nombres */

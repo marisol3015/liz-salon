@@ -1,5 +1,5 @@
 @extends('layout')
-<html >
+<html lang="en">
     <head>
         <title>Inicio</title>
   <meta charset="utf-8">
@@ -12,7 +12,8 @@
           
         .container {
             padding: 30px 120px;
-            color: 	#000000;                                        
+            color: 	#000000;
+                                         
         }
         .person {
             border: 5px solid transparent;
@@ -29,10 +30,7 @@
       </head>
  
             <body background-image: url('/admin/images/fondo.jpg')  >
-                <div class="container text-center"   >
-                    <h1> <font color="white"><dt> Crear cita </dt></font></h1>
-                    <div class="clearfix"></div>
-                </div>
+               
         <div class="container text-center"   >
             <div class="col-md-6 col-sm-6 col-xs-12">
                         <a href="/admin/CrearCita">

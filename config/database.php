@@ -1,11 +1,5 @@
 <?php
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 return [
 
     /*
@@ -19,10 +13,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'Mysql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
-    
-    
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -48,12 +40,14 @@ return [
         ],
 
         'mysql' => [
-            'driver'    => 'mysql',
-            'host'      => $host,
-            'database'  => $database,
-            'username'  => $username,
-            'password'  => $password,
-            'prefix'    => '',
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
@@ -61,13 +55,12 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pqsql',
-            'host' => env('DB_HOST', 'ec2-54-83-1-94.compute-1.amazonaws.com'),
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'd6t15o1m20ijl0'),
-            'username' => env('DB_USERNAME', 'acfjcuptjhnfdh'),
-            'password' => env('DB_PASSWORD', 'c6c6e8493a84b4553b7ab95d9633f11872e67dfd0af1d8ae50cb26dc282f6026
-'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
@@ -123,6 +116,5 @@ return [
         ],
 
     ],
-    
 
 ];

@@ -7,7 +7,7 @@ use multiventas\Http\Controllers\Controller;
 use Calendar;
 use multiventas\Models\Event;
 
-class EventController extends Controller
+class EventsController extends Controller
 {
     public function index()
     {
