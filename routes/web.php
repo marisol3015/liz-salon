@@ -36,7 +36,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     });
     Route::get('servicios', function () {
-        return view('admin.servicio.servicios');
+        return view('admin.servicio.Servicios');
       
 
     });
