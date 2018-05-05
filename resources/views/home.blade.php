@@ -1,4 +1,4 @@
-<html lang="en">
+<html >
     <head>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -144,10 +144,12 @@
             <img src="admin/images/Agenda.jpg" class="img-circle person" alt="Agenda"  >
         </a>
           </div>        
-          <div class="col-sm-4"  style="float:right">
+          <div class="col-sm-4" >
+                <a href="/admin/servicios">
             <h3 class="text-center"><strong><kbd>Servicios</kbd></strong></h3><br>
             <img src="admin/images/Catalogo.jpg" class="img-circle person" alt="Catalogo"  >
-          </div>   
+                </a> 
+        </div>   
       </div>
         
       </body>

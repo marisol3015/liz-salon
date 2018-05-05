@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
     <head>
         <title>Liz salón</title>
   <meta charset="utf-8">
@@ -80,6 +80,7 @@
                   <li><a href="/admin/opciones">Citas</a></li>
                   <li><a href="/admin/facturacion">Facturación</a></li>
                   <li><a href="/admin/informes">Informes</a></li>
+                  <li><a href="/admin/servicios">Servicios</a></li>
                   @guest
                   <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     @else
