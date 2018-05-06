@@ -41,11 +41,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     });
 });
-    /*Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
+    Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
         Route::resource('login', 'LoginController');
               
     
-        });*/
+        });
         
    
 });
