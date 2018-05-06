@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('Auth/login');
 });
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'Auth'], function() {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('clientes', 'ClientesController');
     Route::resource('empleados', 'EmpleadosController');
