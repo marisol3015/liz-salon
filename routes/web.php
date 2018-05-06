@@ -62,12 +62,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'Auth', 'namespace' => 'Auth'], function () {
-    Route::get('password/reset/{token}', 'PasswordController@getReset');
-Route::post('password/reset', 'PasswordController@postReset');
+
    
-//Route::get('password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.reset');
-//Route::post('password/email','ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-//Route::get('password/reset/{token}','ForgotPasswordController@showResetForm')->name('password.reset.token');
-//Route::post('password/reset','ResetPasswordController@reset');
+Route::get('password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+Route::post('password/email','ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}','ForgotPasswordController@showResetForm')->name('password.reset.token');
+Route::post('password/reset','ResetPasswordController@reset');
 });
 Auth::routes();
