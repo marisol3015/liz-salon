@@ -25,7 +25,10 @@
     </div>
 </div>
 </body>
-
+<script src="/fullcalendar-3.9.0/lib/moment.min.js"></script>
+<script src="/fullcalendar-3.9.0/fullcalendar.min.js"></script>
+{!! $calendar->script() !!}
+<script src="{{asset('/fullcalendar-3.9.0/locale/es.js')}}"></script>
 </html>
 
 
