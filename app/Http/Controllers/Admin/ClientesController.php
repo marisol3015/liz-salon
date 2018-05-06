@@ -132,7 +132,7 @@ class ClientesController extends Controller
       try
       {
           $this->validate($request, [
-              'documento'=> 'required|unique:clientes|numeric',
+              'documento',
               'nombre' => 'required|alpha',
               'apellido' => 'required|alpha',
               'direccion' => 'required',

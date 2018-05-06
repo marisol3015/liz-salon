@@ -37,7 +37,9 @@
                                 <td>
                                         <a href="{{ route('clientes.edit', ['id' => $row->documento]) }}" class="btn btn-info btn-xs"><i class="fa fa-chevron-left"></i> Editar </a></i> </a>
                                         <a href="{{ route('clientes.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-chevron-left"></i> Eliminar </a></i> </a>
-                                    </td
+                                        <a href="{{ route('clientes.show', ['id' => $row->documento]) }}" class="btn btn-danger btn-xs"><i class="fa fa-chevron-left"></i> Promocion </a></i> </a>
+
+                                        </td
                             </tr>
                             @endforeach
                             @endif
