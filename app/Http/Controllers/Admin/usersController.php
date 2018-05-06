@@ -147,7 +147,7 @@ class UsuariosController extends Controller
                 ->replyTo($data['sender'], 'Administrador')
                 ->subject($data['asunto']);
 
-                echo 'The mail has been sent successfully';
+                echo 'Correo enviado con exito';
 
             });
 
