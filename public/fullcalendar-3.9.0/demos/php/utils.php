@@ -50,7 +50,6 @@ class Event {
     // Record misc properties
     foreach ($array as $name => $value) {
       if (!in_array($name, array('title', 'allDay', 'start', 'end'))) {
-        
         $this->properties[$name] = $value;
       }
     }
@@ -86,7 +85,7 @@ class Event {
 
     // Figure out the date format. This essentially encodes allDay into the date string.
     if ($this->allDay) {
-      $format = 'c'; // output like "2013-12-29"
+      $format = 'Y-m-d'; // output like "2013-12-29"
     }
     else {
       $format = 'c'; // full ISO8601 output, like "2013-12-29T09:00:00+08:00"
