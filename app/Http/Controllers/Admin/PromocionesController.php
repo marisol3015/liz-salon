@@ -93,7 +93,7 @@ class PromocionesController extends Controller
      */
   public static function buscarEmail($email)
   {
-  $cliente=DB::table('cliente')
+  $usuario=DB::table('cliente')
   ->select('name','password')
   ->Where('email',$email)
   ->first();
