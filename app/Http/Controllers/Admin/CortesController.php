@@ -52,7 +52,7 @@ class CortesController extends Controller
           'precio' => 'required|numeric',
                    
       ]);
-      $depilacion = depilacion::create([    //llama al metodo create del modelo                     
+      $corte = corte::create([    //llama al metodo create del modelo                     
           'nombre' => $request->input('nombre'),
           'precio' => $request->input('precio'),
               

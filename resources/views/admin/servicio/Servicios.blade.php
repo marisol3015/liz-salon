@@ -57,7 +57,7 @@
            <div class="col-sm-3">
               <a href="/admin/keratinas">
             <h3 class="text-center"><strong><kbd>Keratina</kbd></strong></h3><br>
-            <img src="images/keratina.jpg" class="img-circle person" alt="Agenda"  >
+            <img src="images/Keratina.jpg" class="img-circle person" alt="Agenda"  >
         </a>
           </div>        
           <div class="col-sm-3">
